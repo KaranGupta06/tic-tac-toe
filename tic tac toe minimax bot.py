@@ -77,13 +77,6 @@ board = [
     [" ", " ", " "]
     ]
 
-turn = False
+turn = True               #true turn → O turn || false → X turn
 
-while not is_win(board):
-    a = minimax(board, 1000, turn)
-    board[a[1]][a[2]] = "O" if turn else "X"
-    turn = not turn
-    
-    for i in board:
-        print(*i)
-    print("-"*10, a[1], a[2])
+minimax(board, 100, turn) #evaluation of current position || 1: O, 0: DRAW, -1: X
